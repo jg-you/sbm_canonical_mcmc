@@ -1,6 +1,6 @@
 # sbm_canonical_mcmc
 
-C++ implementation of a MCMC sampler for the (canonical) MCMC.
+C++ implementation of a MCMC sampler for the (canonical) Stochastic Block Model.
 
 
 ## Table of content
