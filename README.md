@@ -79,11 +79,10 @@ Both the burn-in and sampling frequency are ignored in the maximization mode.
 
 There inverse temperature is given as
 
-  \begin{align}
-    \beta(t) &= \beta_0 \alpha^{-t}  \tag{exponential cooling}\\
-    \beta(t) &= \beta_0 [1 - \eta t \beta_0]^{-1}  \tag{linear cooling}\\
-    \beta(t) &= \frac{\log(t + d)}{c}  \tag{logarithmic cooling}
-  \end{align}
+    beta(t) = 1/T_0 * alpha^(-t) 	        (Exponential)
+    beta(t) = 1/T_0 * [1 - eta * t / T_0]^(-1)  (Linear)
+    beta(t) = log(t + d) / c  			(Logarithmic)
+    beta(t) = 1 / T_0				(Constant)
 
 where $t$ is the MCMC step. The paramters of these cooling schedule are passed like so:
 
