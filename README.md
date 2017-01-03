@@ -2,6 +2,16 @@
 
 C++ implementation of a MCMC sampler for the (canonical) MCMC.
 
+
+## Table of content
+
+1. [Usage](#usage)
+  1. [Compilation](#compilation)
+  2. [Example marginalization](#example-marginalization)
+  3. [Example maximization](#example-maximization)
+2. [Companion article](#companion-article)
+
+
 ## Usage
 
 ### Compilation
