@@ -4,6 +4,8 @@ C++ implementation of a MCMC sampler for the (canonical) MCMC.
 
 ## Usage
 
+### Compilation
+
 Depends on `boost::program_options` and `cmake`.
 
 Compilation:
@@ -12,6 +14,8 @@ Compilation:
 	make
 
 The binaries are built in `bin/`.
+
+### Example marginalization
 
 Example call:
 
@@ -44,6 +48,49 @@ If the build was succesfull, the output should look like
     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
     acceptance ratio 0.5055
 
+where the line `1 1 1 ...` is outputted to std::cout whilst the others appear in std::clog (thereby allowing for easy 
+redirection of the output).
+Each integer on the output line corresponds to the index of the block of vertex v_0, v_1,..., v_n.
+
+Replace `bin/mcmc` with `bin/mcmc_history` to output the state of the system everytime it is sampled.
+
+Option "--use_ppm" enables simpler transition probabilities computation, only possible for probability matrices of the form
+
+    p_in  p_out p_out ...  p_out 
+    p_out p_in  p_out ...  p_out 
+    p_out p_out p_in  ...  p_out 
+      .     .     .    .     .
+    p_in  p_out p_out ...  p_in
+
+It must be use in conjunction with `-P p_in p_out` instead of the full matrix
+
+### Example maximization
+
+In the maximization mode, we guess the planted partition by maximizing the likeihood of the partition (with simulated 
+annealing).
+
+The call is similar to that of the marginalization mode:
+
+	bin/mcmc -e example_edge_list.txt -P 0.6 0.1 0.1 0.6 -n 20 20 -r -t 1000 --maximize -c exponential	
+
+Both the burn-in and sampling frequency are ignored in the maximization mode.
+
+4 cooling schedules are implemented: `exponential`, `linear`, `logarithmic` and `constant`.
+
+There inverse temperature is given as
+
+  \begin{align}
+    \beta(t) &= \beta_0 \alpha^{-t}  \tag{exponential cooling}\\
+    \beta(t) &= \beta_0 [1 - \eta t \beta_0]^{-1}  \tag{linear cooling}\\
+    \beta(t) &= \frac{\log(t + d)}{c}  \tag{logarithmic cooling}
+  \end{align}
+
+where $t$ is the MCMC step. The paramters of these cooling schedule are passed like so:
+
+	-a T_0 alpha    (Exponential)
+	-a T_0 eta      (Lienar)
+        -a c d          (Logarithmic)
+	-a T_0          (Constant)
 
 ## Companion article
 
