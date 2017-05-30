@@ -1,4 +1,4 @@
-# sbm_canonical_mcmc
+# sbm_canonical_mcmc [![Build Status](https://travis-ci.org/jg-you/sbm_canonical_mcmc.svg?branch=master)](https://travis-ci.org/jg-you/sbm_canonical_mcmc)
 
 C++ implementation of a MCMC sampler for the (canonical) MCMC.
 
