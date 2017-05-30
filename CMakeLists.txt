@@ -25,13 +25,7 @@ else()
 endif()
 
 # Boost
-find_package( Boost 1.40 COMPONENTS program_options )
-if (Boost_FOUND)
-    set(HAVE_LIBBOOST_PROGRAM_OPTIONS 1)
-else()
-    message(STATUS "C++ Boost::program_options is not installed. Using limited interface.")
-    set(HAVE_LIBBOOST_PROGRAM_OPTIONS 0)
-endif ()
+find_package( Boost 1.40 REQUIRED COMPONENTS program_options )
 
 # Steady clock (Google code)
 include(cmake_tests/CXXFeatureCheck.cmake)
