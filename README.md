@@ -1,6 +1,6 @@
 # sbm_canonical_mcmc [![Build Status](https://travis-ci.org/jg-you/sbm_canonical_mcmc.svg?branch=master)](https://travis-ci.org/jg-you/sbm_canonical_mcmc)
 
-C++ implementation of a MCMC sampler for the (canonical) MCMC.
+C++ implementation of a MCMC sampler for the (canonical) Stochastic Block Model.
 
 
 ## Table of content
@@ -77,7 +77,7 @@ It must be use in conjunction with `-P p_in p_out` instead of the full matrix.
 
 ### Example maximization
 
-In the maximization mode, we guess the planted partition by maximizing the likeihood of the partition (with simulated 
+In the maximization mode, we guess the planted partition by maximizing the likelihood of the partition (with simulated 
 annealing).
 
 The call is similar to that of the marginalization mode:
@@ -88,7 +88,7 @@ Both the burn-in and sampling frequency are ignored in the maximization mode.
 
 4 cooling schedules are implemented: `exponential`, `linear`, `logarithmic` and `constant`.
 
-There inverse temperature is given as
+The inverse temperatures functions are defined
 
     beta(t) = 1/T_0 * alpha^(-t)                (Exponential)
     beta(t) = 1/T_0 * [1 - eta * t / T_0]^(-1)  (Linear)
