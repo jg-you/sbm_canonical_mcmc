@@ -40,12 +40,12 @@ public:
                      unsigned int sampling_frequency,
                      unsigned int num_samples,
                      std::mt19937& engine);
-  double anneal(blockmodel_t& blockmodel,
-                const float_mat_t & p,
-                double (*cooling_schedule)(unsigned int, float_vec_t),
-                float_vec_t cooling_schedule_kwargs,
-                unsigned int duration,
-                std::mt19937& engine);
+  void anneal(blockmodel_t& blockmodel,
+              const float_mat_t & p,
+              double (*cooling_schedule)(unsigned int, float_vec_t),
+              float_vec_t cooling_schedule_kwargs,
+              unsigned int duration,
+              std::mt19937& engine);
 };
 
 /* Inherited classes with specific definitions */

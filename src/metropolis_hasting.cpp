@@ -81,7 +81,7 @@ double metropolis_hasting::marginalize(blockmodel_t& blockmodel,
   }
   return (double) accetped_steps / ((double) sampling_frequency * num_samples);
 }
-double metropolis_hasting::anneal(blockmodel_t& blockmodel,
+void metropolis_hasting::anneal(blockmodel_t& blockmodel,
                                   const float_mat_t& p,
                                   double (*cooling_schedule)(unsigned int, float_vec_t),
                                   float_vec_t cooling_schedule_kwargs,
