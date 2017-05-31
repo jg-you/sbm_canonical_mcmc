@@ -273,22 +273,18 @@ int main(int argc, char const *argv[]) {
       }
     }
     // Bind proper Metropolis-Hasting algorithm
-    metropolis_hasting* algorithm;
+    std::shared_ptr<metropolis_hasting> algorithm;
     if (!use_ppm && use_single_vertex) {
-        mh_single_vertex_sbm alg;
-        algorithm = &alg;
+        algorithm = std::make_shared<mh_single_vertex_sbm>();
     }
     else if (use_ppm && use_single_vertex) {
-        mh_single_vertex_ppm alg;
-        algorithm = &alg;
+        algorithm = std::make_shared<mh_single_vertex_ppm>();    
     }
     else if (!use_ppm &&  !use_single_vertex) {
-        mh_vertices_swap_sbm alg;
-        algorithm = &alg;
+        algorithm = std::make_shared<mh_vertices_swap_sbm>();     
     }
     else if (use_ppm && !use_single_vertex) {
-        mh_vertices_swap_ppm alg;
-        algorithm = &alg;
+        algorithm = std::make_shared<mh_vertices_swap_ppm>();     
     }
 
     /* ~~~~~ Logging ~~~~~~~*/
