@@ -108,6 +108,6 @@ Please cite
 
 **Finite size analysis of the detectability limit of the stochastic block model**
 
-Jean-Gabriel Young, Patrick Desrosiers, Laurent Hébert-Dufresne, Edward Laurence, Louis J. Dubé
-
-[arXiv:1701.00062](https://arxiv.org/abs/1701.00062)
+Jean-Gabriel Young, Patrick Desrosiers, Laurent Hébert-Dufresne, Edward Laurence, Louis J. Dubé<br/>
+Phys. Rev. E **95**, 062304 (2017)<br/>
+[arXiv:1701.00062](https://arxiv.org/abs/1701.00062) | [DOI:10.1103/PhysRevE.95.062304](http://dx.doi.org/10.1103/PhysRevE.95.062304)
