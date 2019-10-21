@@ -17,7 +17,7 @@ addons:
       - clang-3.7
       - g++-4.7
       - gcc-4.7
-      - libboost1.55-all-dev
+      - libboost-all-dev
 notifications:
   email: false
 script: 
